@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+    <title>Estudo Flask</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estudo.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+    <div>
+        <header>
+            <h1>Estudo Flask</h1>
+            <img src="{{ url_for('static', filename='Octocat.png') }}" alt="logo" class="App-logo" />
+        </header>
+    </div>
+    <section>
+        <h3>Exemplos sem banco de dados</h3>
+        <ul>
+            <ul>
+                <li><a href="/aluno">Aluno 1</a></li>
+                <li><a href="/aluno2">Aluno 2</a></li>
+                <li><a href="/alunos">Alunos</a></li>
+            </ul>
+        </ul>
+        <h3>Blog (exemplo com banco de dados)</h3>
+        <ul>
+            <ul>
+                <li><a href="{{ url_for('all_posts') }}">Blog</a></li>
+            </ul>
+        </ul>
+    </section>
+</body>
+
+</html>

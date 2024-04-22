@@ -1,0 +1,14 @@
+2024-04-18 12:47:35,629 INFO: App startup [in /workspaces/codespaces-flask/app/__init__.py:33]
+2024-04-18 12:48:03,127 ERROR: Exception on /error_test [GET] [in /usr/local/python/3.10.13/lib/python3.10/site-packages/flask/app.py:1414]
+Traceback (most recent call last):
+  File "/usr/local/python/3.10.13/lib/python3.10/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/python/3.10.13/lib/python3.10/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/python/3.10.13/lib/python3.10/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/python/3.10.13/lib/python3.10/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/workspaces/codespaces-flask/app/routes.py", line 87, in error_test
+    raise Exception('Exception test')
+Exception: Exception test

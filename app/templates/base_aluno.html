@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+    <title>Estudo Flask</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estudo.css') }}">
+</head>
+<body>
+    <h1>Estudo Flask</h1>
+    <nav>
+        <ul>
+            <li><a href="/aluno">Aluno</a></li>
+            <li><a href="/aluno2">Aluno</a></li>
+            <li><a href="/alunos">Alunos</a></li>
+        </ul>
+    </nav>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>

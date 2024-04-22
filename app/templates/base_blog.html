@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+    <title>Estudo Flask</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estudo.css') }}">
+</head>
+<body>
+    <h1>Estudo Flask</h1>
+    <nav>
+        <ul>
+            <li><a href="/blog/all_posts">Blog</a></li>
+            <li><a href="/blog/post">Postar</a></li>
+            {% if current_user.is_anonymous %}
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            {% else %}
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>

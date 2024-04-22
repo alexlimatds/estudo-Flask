@@ -1,0 +1,25 @@
+{% extends "base_aluno.html" %}
+
+{% block content %}
+    <article>
+        <h2>Alunos</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Matrícula</th>
+                    <th>Nome</th>
+                    <th>Curso</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for a in alunos %}
+                <tr>
+                    <td>{{ a.matricula }}</td>
+                    <td>{{ a.nome }}</td>
+                    <td>{{ a.curso }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </article>
+{% endblock %}

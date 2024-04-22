@@ -1,0 +1,41 @@
+{% extends "base_aluno.html" %}
+
+{% block content %}
+    <article>
+        <h2>Cadastro de Aluno</h2>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        <form method="POST" action="{{ url_for('aluno') }}" novalidate>
+            {{ form.hidden_tag() }} <!-- proteção contra ataques CSRF -->
+            <p>
+                {{ form.nome.label }}<br>
+                {{ form.nome(size=32) }}<br>
+                {% for error in form.nome.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.matricula.label }}<br>
+                {{ form.matricula(size=20) }}<br>
+                {% for error in form.matricula.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.curso.label }}<br>
+                {{ form.curso(size=32) }}<br>
+                {% for error in form.curso.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>{{ form.submit() }}</p>
+        </form>
+    </article>
+{% endblock %}
